@@ -1,0 +1,30 @@
+version: 2.1
+
+cache_key: &cache_key eslint-config-20201111-{{ checksum "yarn.lock" }}
+
+jobs:
+  lint-test:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore yarn cache
+          keys:
+            - *cache_key
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save yarn cache
+          key: *cache_key
+          paths:
+            - node_modules/
+      - run:
+          name: lint
+          command: yarn lint
+
+workflows:
+  build-test:
+    jobs:
+      - lint-test

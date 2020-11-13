@@ -1,0 +1,76 @@
+{
+  "name": "@shiphub/eslint-config",
+  "version": "0.0.0",
+  "description": "Shiphub's ESLint config.",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "styleguide"
+  ],
+  "author": {
+    "name": "Christopher Szatmary"
+  },
+  "repository": "getshiphub/eslint-config",
+  "bugs": {
+    "url": "https://github.com/getshiphub/eslint-config/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "fmt": "prettier --write '**/*.js'",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepublishOnly": "yarn lint",
+    "release": "release-it"
+  },
+  "dependencies": {
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.15.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "eslint": "^7.12.1",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "eslint": "^7.12.1",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.0",
+    "prettier": "^2.1.2",
+    "release-it": "^14.2.1",
+    "typescript": "^4.0.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./index.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "printWidth": 100
+  }
+}
