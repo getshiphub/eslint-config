@@ -1,6 +1,6 @@
 version: 2.1
 
-cache_key: &cache_key eslint-config-20201111-{{ checksum "yarn.lock" }}
+cache_key: &cache_key eslint-config-20201125-{{ checksum "yarn.lock" }}
 
 jobs:
   lint-test:
