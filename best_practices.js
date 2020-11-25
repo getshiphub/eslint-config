@@ -1,8 +1,10 @@
 module.exports = {
-  extends: ["airbnb-base"],
+  extends: ["airbnb-base", "prettier"],
   rules: {
+    camelcase: ["error", { properties: "always" }],
     "class-methods-use-this": ["off"],
     curly: ["error"],
+    "lines-around-directive": ["off"],
     "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
     "max-classes-per-file": ["off"],
     "no-console": ["off"],
@@ -11,6 +13,7 @@ module.exports = {
     "no-else-return": ["off"],
     "no-nested-ternary": ["off"],
     "no-param-reassign": ["error", { props: false }],
+    "no-plusplus": ["off"],
     "no-restricted-syntax": [
       "error",
       {
@@ -35,7 +38,9 @@ module.exports = {
       },
     ],
     "no-ternary": ["error"],
+    "no-underscore-dangle": ["off"],
     "prefer-destructuring": ["error", { object: true, array: false }],
+    "spaced-comment": ["error", "always", { markers: ["/"] }],
   },
   env: {
     node: true,
