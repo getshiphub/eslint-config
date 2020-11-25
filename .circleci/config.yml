@@ -6,6 +6,8 @@ jobs:
   lint-test:
     docker:
       - image: cimg/node:lts
+    resource_class: small
+    working_directory: /mnt/ramdisk
     steps:
       - checkout
       - restore_cache:
