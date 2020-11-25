@@ -1,11 +1,13 @@
 version: 2.1
 
-cache_key: &cache_key eslint-config-20201111-{{ checksum "yarn.lock" }}
+cache_key: &cache_key eslint-config-20201125-{{ checksum "yarn.lock" }}
 
 jobs:
   lint-test:
     docker:
       - image: cimg/node:lts
+    resource_class: small
+    working_directory: /mnt/ramdisk
     steps:
       - checkout
       - restore_cache:
