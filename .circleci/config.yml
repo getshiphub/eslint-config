@@ -1,24 +1,24 @@
 version: 2.1
 
-cache_key: &cache_key eslint-config-20201125-{{ checksum "yarn.lock" }}
+cache_key: &cache_key eslint-config-20201125-{{ checksum "pnpm-lock.yaml" }}
 
 jobs:
   lint-test:
     docker:
-      - image: cimg/node:lts
+      - image: cimg/node:20.7
     resource_class: small
     working_directory: /mnt/ramdisk
     steps:
       - checkout
       - restore_cache:
-          name: Restore yarn cache
+          name: Restore pnpm cache
           keys:
             - *cache_key
       - run:
           name: Install dependencies
-          command: yarn install --frozen-lockfile
+          command: pnpm install --frozen-lockfile
       - save_cache:
-          name: Save yarn cache
+          name: Save pnpm cache
           key: *cache_key
           paths:
             - node_modules/
