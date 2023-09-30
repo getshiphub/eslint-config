@@ -4,10 +4,10 @@ Shiphub's ESLint configuration. This config assumes TypeScript.
 
 ## Usage
 
-Install with yarn:
+Install with pnpm:
 
 ```sh
-yarn add @shiphub/eslint-config @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier --dev
+pnpm add @shiphub/eslint-config @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-import-resolver-typescript eslint-plugin-import --dev
 ```
 
 Then add it to your eslint config's `extends`:

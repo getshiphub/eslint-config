@@ -33,7 +33,7 @@
     "fmt": "prettier --write '**/*.js'",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepublishOnly": "yarn lint",
+    "prepublishOnly": "pnpm run lint",
     "release": "release-it"
   },
   "dependencies": {

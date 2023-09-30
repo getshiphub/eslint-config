@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "after:init": ["yarn lint"]
+    "after:init": ["pnpm run lint"]
   },
   "git": {
     "requireBranch": "master",

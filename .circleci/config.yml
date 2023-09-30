@@ -24,7 +24,7 @@ jobs:
             - node_modules/
       - run:
           name: lint
-          command: yarn lint
+          command: pnpm run lint
 
 workflows:
   build-test:
